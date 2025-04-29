@@ -32,7 +32,7 @@ export default function App() {
       formData.append("files", file);
     });
     console.log("Uploading files to backend:", files);
-    await fetch("http://localhost:8000/api/upload/", {
+    await fetch("http://54.92.166.86:8000/api/upload/", {
       method: "POST",
       body: formData,
     });
@@ -46,7 +46,7 @@ export default function App() {
     setSearchResult([]);
     console.log("Search triggered:", search);
 
-    const response = await fetch("http://localhost:8000/api/search", {
+    const response = await fetch("http://54.92.166.86:8000/api/search", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ query: search }),
@@ -70,7 +70,7 @@ export default function App() {
 
   const handleFileClick = async (title) => {
     try {
-      const response = await fetch("http://localhost:8000/api/download", {
+      const response = await fetch("http://54.92.166.86:8000/api/download", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title: title }), // <--- send title!
